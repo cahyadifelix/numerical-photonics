@@ -15,7 +15,7 @@ def lamb2omega(lamb, ref_index = 1.0) -> float:
     """ Function to convert wavelength into angular frequency
 
     Args:
-        lamb (float): wavelength
+        lamb (float): wavelength in vacuum
         ref_index (float, optional): The refractive index of the material. Defaults to 1.0
 
     Returns:
