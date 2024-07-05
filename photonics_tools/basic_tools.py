@@ -11,7 +11,7 @@ VACUUM_PERMEABILITY = 4*PI*1e-7
 
 
 
-def lamb2omega(lamb, ref_index = 1.0):
+def lamb2omega(lamb, ref_index = 1.0) -> float:
     """ Function to convert wavelength into angular frequency
 
     Args:
@@ -23,7 +23,7 @@ def lamb2omega(lamb, ref_index = 1.0):
     """
     return (2*PI*SPEED_OF_LIGHT)/(ref_index*lamb)
 
-def freq2omega(freq):
+def freq2omega(freq) -> float:
     """ Convert frequency to angular frequency
 
     Args:
@@ -36,7 +36,7 @@ def freq2omega(freq):
 
 
 
-def impedance(epsilon = VACUUM_PERMITTIVITY, mu = VACUUM_PERMEABILITY):
+def impedance(epsilon = VACUUM_PERMITTIVITY, mu = VACUUM_PERMEABILITY) -> float:
     """Calculate the impedance of a dielectric
 
     Args:
@@ -49,4 +49,14 @@ def impedance(epsilon = VACUUM_PERMITTIVITY, mu = VACUUM_PERMEABILITY):
     return np.sqrt(mu/epsilon)
 
 
-    
+def lamb2wavevector(lamb_vac, ref_index = 1.0) -> float:
+    """Calculate the wavevector from wavelength
+
+    Args:
+        lamb_vac (float): wavelength in vacuum
+        ref_index (float, optional): The refractive index of the material. Defaults to 1.0
+
+    Returns:
+        k: The wavevector at a certain medium
+    """
+    return ((2*PI)/lamb_vac)*ref_index
