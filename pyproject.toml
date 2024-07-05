@@ -1,0 +1,8 @@
+[project]
+name = "photonics_tools"
+version = "0.1.0"
+description = "Tools for photonics calculations"
+
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.2,<4"]
